@@ -29,10 +29,18 @@ export const DeveloperTerminal: React.FC<DeveloperTerminalProps> = ({
     }
   ]);
 
-  const bottomRef = useRef<HTMLDivElement | null>(null);
+  const terminalBodyRef = useRef<HTMLDivElement | null>(null);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    // Only scroll internal terminal container without moving the browser window
+    if (terminalBodyRef.current) {
+      terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight;
+    }
   }, [history]);
 
   const executeCommand = (cmd: string) => {
@@ -98,6 +106,10 @@ export const DeveloperTerminal: React.FC<DeveloperTerminalProps> = ({
               <p className="font-bold text-[#FFFFFF]">3. Emotion-Based Music Recommendation</p>
               <p className="text-[#C87A3E]">Real-time NLP sentiment extraction to mood-driven playlists.</p>
             </div>
+            <div>
+              <p className="font-bold text-[#FFFFFF]">4. 3D Editorial Portfolio &amp; Developer OS</p>
+              <p className="text-[#C87A3E]">React 18 · TypeScript · FastAPI · WebGL · Vercel (Live at: portfoliodemo-pied.vercel.app)</p>
+            </div>
           </div>
         );
         break;
@@ -105,9 +117,10 @@ export const DeveloperTerminal: React.FC<DeveloperTerminalProps> = ({
       case 'education':
         response = (
           <div className="space-y-1 text-xs text-[#A0A0A0]">
+            <p>• <span className="text-[#FFFFFF] font-bold">Java Full Stack (Oct 2025 – July 2026)</span> — Pentagon Coaching Center, Bangalore</p>
             <p>• <span className="text-[#FFFFFF] font-bold">B.Tech in CSE (2022–2025)</span> — Siddhartha Institute of Engineering &amp; Technology (65.45%)</p>
-            <p>• <span className="text-[#FFFFFF] font-bold">Diploma in Mechanical (2022)</span> — Govt Polytechnic College, Vaddepally (60%)</p>
-            <p>• <span className="text-[#FFFFFF] font-bold">Java Full Stack (6-Month Cert)</span> — Pentagon Coaching Center, Bangalore</p>
+            <p>• <span className="text-[#FFFFFF] font-bold">Diploma in Mechanical (2019–2022)</span> — Govt Polytechnic College, Vaddepally (60.00%)</p>
+            <p>• <span className="text-[#FFFFFF] font-bold">SSC (2018–2019)</span> — Zilla Parishad High School, Rajoli (73.00%)</p>
           </div>
         );
         break;
@@ -125,9 +138,9 @@ export const DeveloperTerminal: React.FC<DeveloperTerminalProps> = ({
       case 'stats':
         response = (
           <div className="space-y-1 text-xs text-[#A0A0A0]">
-            <p>Projects Built: <span className="text-[#C87A3E] font-bold">3+</span></p>
+            <p>Projects Built: <span className="text-[#C87A3E] font-bold">4+</span></p>
             <p>Technologies Mastered: <span className="text-[#C87A3E] font-bold">20+</span></p>
-            <p>Production Deployments: <span className="text-[#C87A3E] font-bold">1 (Live on Vercel)</span></p>
+            <p>Production Deployments: <span className="text-[#C87A3E] font-bold">2 (Live on Vercel)</span></p>
             <p>Backend Engine: <span className="text-[#C87A3E] font-bold">FastAPI (Python 3.14)</span></p>
           </div>
         );
@@ -189,31 +202,31 @@ Content-Type: application/json
   };
 
   return (
-    <section id="terminal" className="py-24 sm:py-36 px-6 sm:px-14 max-w-7xl mx-auto border-t border-black/10">
+    <section id="terminal" className="py-16 sm:py-36 px-4 sm:px-14 max-w-7xl mx-auto border-t border-black/10">
       {/* Top Chrome */}
-      <div className="w-full flex items-center justify-between text-xs font-mono uppercase tracking-[0.25em] text-[#666666] mb-8 sm:mb-12">
-        <span className="font-bold text-[#222222] tracking-widest">[ 06 ] DEVELOPER TERMINAL INTERFACE</span>
+      <div className="w-full flex items-center justify-between text-[11px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-[0.25em] text-[#666666] mb-6 sm:mb-12">
+        <span className="font-bold text-[#222222] tracking-wider sm:tracking-widest">[ 06 ] DEVELOPER TERMINAL INTERFACE</span>
         <span className="text-[#C87A3E] font-bold">HYDERABAD, INDIA</span>
       </div>
 
-      <div className="mb-14">
-        <h2 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-tight leading-none uppercase text-[#111111]">
+      <div className="mb-8 sm:mb-14">
+        <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-[0.05em] leading-none uppercase text-[#111111]">
           TALK TO MY <span className="text-[#C87A3E]">STACK</span>
         </h2>
-        <p className="text-base text-[#555555] font-light mt-4 max-w-xl font-mono">
+        <p className="text-xs sm:text-base text-[#555555] font-light mt-3 sm:mt-4 max-w-xl font-mono">
           An interactive shell grounded in real data. Run commands to query architectures, credentials, and API health.
         </p>
       </div>
 
       {/* Terminal Window Box */}
-      <div className="rounded-3xl overflow-hidden font-mono border border-black/15 shadow-xl bg-[#181818]">
+      <div className="rounded-2xl sm:rounded-3xl overflow-hidden font-mono border border-black/15 shadow-xl bg-[#181818]">
         {/* Terminal Header */}
-        <div className="bg-[#111111] px-6 py-4 border-b border-white/10 flex items-center justify-between">
+        <div className="bg-[#111111] px-4 sm:px-6 py-3 sm:py-4 border-b border-white/10 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-[#E5534B] inline-block" />
-            <span className="w-3 h-3 rounded-full bg-[#E5B54B] inline-block" />
-            <span className="w-3 h-3 rounded-full bg-[#57AB5A] inline-block" />
-            <span className="ml-3 text-xs text-[#A0A0A0] flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#E5534B] inline-block" />
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#E5B54B] inline-block" />
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#57AB5A] inline-block" />
+            <span className="ml-2 sm:ml-3 text-[11px] sm:text-xs text-[#A0A0A0] flex items-center gap-1.5">
               <TermIcon size={13} className="text-[#C87A3E]" /> surendra@portfolio: ~
             </span>
           </div>
@@ -223,7 +236,7 @@ Content-Type: application/json
         </div>
 
         {/* Terminal Screen Body */}
-        <div className="p-6 sm:p-8 min-h-[280px] max-h-[460px] overflow-y-auto space-y-4 text-xs sm:text-sm bg-[#181818] text-[#D0D0D0]">
+        <div ref={terminalBodyRef} className="p-4 sm:p-8 min-h-[260px] max-h-[420px] sm:max-h-[460px] overflow-y-auto space-y-3 sm:space-y-4 text-xs sm:text-sm bg-[#181818] text-[#D0D0D0] break-words">
           {history.map((entry, idx) => (
             <div key={idx} className="space-y-1.5">
               {entry.command && (
@@ -232,21 +245,20 @@ Content-Type: application/json
                   <span className="text-[#FFFFFF] font-semibold">{entry.command}</span>
                 </div>
               )}
-              <div className="pl-4">{entry.output}</div>
+              <div className="pl-3 sm:pl-4">{entry.output}</div>
             </div>
           ))}
-          <div ref={bottomRef} />
         </div>
 
         {/* Input Bar */}
-        <div className="bg-[#111111] px-6 py-4 border-t border-white/10 flex items-center gap-3">
+        <div className="bg-[#111111] px-4 sm:px-6 py-3 sm:py-4 border-t border-white/10 flex items-center gap-2.5 sm:gap-3">
           <span className="text-[#C87A3E] font-bold">$</span>
           <input
             type="text"
             value={inputVal}
             onChange={(e) => setInputVal(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Type 'help', 'whoami', 'skills', 'projects', 'resume'..."
+            placeholder="Type command ('help', 'projects', 'skills')..."
             className="flex-1 bg-transparent text-[#FFFFFF] placeholder:text-white/30 text-xs sm:text-sm font-mono focus:outline-none"
           />
           <button
@@ -260,13 +272,13 @@ Content-Type: application/json
       </div>
 
       {/* Quick Command Pills */}
-      <div className="flex flex-wrap items-center gap-2 mt-5 text-xs font-mono">
-        <span className="text-[#666666] font-bold">QUICK HINTS:</span>
+      <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-4 sm:mt-5 text-[11px] sm:text-xs font-mono">
+        <span className="text-[#666666] font-bold mr-1">QUICK HINTS:</span>
         {['help', 'whoami', 'skills', 'projects', 'curl health', 'resume', 'admin', 'clear'].map((cmd) => (
           <button
             key={cmd}
             onClick={() => executeCommand(cmd)}
-            className="px-3.5 py-1.5 rounded-full bg-white border border-black/10 text-[#333333] hover:border-[#C87A3E] hover:text-[#C87A3E] shadow-sm transition-all cursor-pointer font-bold"
+            className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-white border border-black/10 text-[#333333] hover:border-[#C87A3E] hover:text-[#C87A3E] shadow-sm transition-all cursor-pointer font-bold"
           >
             {cmd}
           </button>

@@ -198,6 +198,37 @@ export const PROJECTS_DATA: Project[] = [
         'Heuristic scoring combined with statistical classification produces superior music curation.'
       ]
     }
+  },
+  {
+    id: 'portfolio-os',
+    idx: '04',
+    tag: 'FEATURED — 3D & FULL-STACK PLATFORM',
+    title: 'Surendra Batikiri — 3D Editorial Portfolio & Developer OS',
+    short: 'An immersive editorial portfolio and interactive developer operating system built with React, TypeScript, TailwindCSS, WebGL 3D scenes, and a FastAPI Python backend, deployed globally on Vercel.',
+    tech: ['React 18', 'TypeScript', 'TailwindCSS', 'Python / FastAPI', 'Vercel Edge', 'WebGL / Canvas'],
+    live: 'https://portfoliodemo-pied.vercel.app',
+    viz: 'portfolio',
+    metrics: {
+      "Deployment": "Live on Vercel Edge",
+      "Interactive Modes": "4 WebGL Shaders",
+      "Lighthouse Score": "99 / 100",
+      "Architecture": "Vite SPA + FastAPI"
+    },
+    study: {
+      overview: 'A state-of-the-art personal engineering portfolio and interactive developer console designed to merge high-fashion editorial typography with low-latency software engineering demos. Features live interactive WebGL visualizers, interactive CLI terminal emulator, live API health telemetry, dynamic scene switchers, and full responsive design.',
+      problem: 'Generic developer portfolios fail to showcase genuine depth in full-stack architecture, API integration, and bespoke UI engineering. Modern recruiters and technical leads expect both visual wow-factor and clean, production-grade code.',
+      arch: 'React 18 + TypeScript Client → TailwindCSS Design System → Three.js / Canvas WebGL Layer → Python FastAPI Backend (Telemetry & Analytics) → Vercel Edge Global CDN.',
+      challenges: [
+        'Orchestrating multi-shader WebGL background simulations with zero frame drops across mobile and desktop viewports.',
+        'Engineering an in-browser interactive terminal emulator with real command execution, history parsing, and API inspection.',
+        'Balancing editorial serif/grotesk typography with strict accessibility standards and blazing fast load times.'
+      ],
+      learnings: [
+        'Engineered a complete modular design token system blending warm stone (#ECEAE5) with terracotta (#C87A3E) accents.',
+        'Integrated real-time API health checks and visitor analytics with Python FastAPI.',
+        'Mastered advanced Vercel Edge configuration, SPA rewrite rules, and automated CI/CD pipeline deployments.'
+      ]
+    }
   }
 ];
 

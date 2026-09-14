@@ -25,6 +25,17 @@ export const App: React.FC = () => {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
 
+  // Always force window to top on initial page mount & disable browser scroll restoration
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  }, []);
+
   // Track initial page view via API
   useEffect(() => {
     try {
@@ -39,6 +50,14 @@ export const App: React.FC = () => {
       }).catch(() => { });
     } catch (e) { }
   }, []);
+
+  const handlePreloaderComplete = () => {
+    setShowPreloader(false);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }, 50);
+  };
 
   const handleSelectScene = (newScene: SceneMode) => {
     setScene(newScene);
@@ -63,10 +82,10 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#ECEAE5] text-[#222222] font-hn selection:bg-[#C87A3E] selection:text-white relative">
+    <div className="min-h-screen bg-[#ECEAE5] text-[#222222] font-hn selection:bg-[#C87A3E] selection:text-white relative overflow-x-hidden">
       {/* Cinematic Boot Preloader */}
       {showPreloader && (
-        <IntroPreloader onComplete={() => setShowPreloader(false)} />
+        <IntroPreloader onComplete={handlePreloaderComplete} />
       )}
 
       {/* Main Full-Viewport Hero Composition */}

@@ -48,6 +48,10 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #C87A3E;
   }
+
+  .font-display {
+    letter-spacing: 0.05em;
+  }
 }
 
 /* Animations */

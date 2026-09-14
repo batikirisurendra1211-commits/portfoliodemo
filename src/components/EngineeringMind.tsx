@@ -29,24 +29,24 @@ export const EngineeringMind: React.FC = () => {
   };
 
   return (
-    <section id="mind" className="py-24 sm:py-36 px-6 sm:px-14 max-w-7xl mx-auto border-t border-black/10">
+    <section id="mind" className="py-16 sm:py-36 px-4 sm:px-14 max-w-7xl mx-auto border-t border-black/10">
       {/* Top Chrome */}
-      <div className="w-full flex items-center justify-between text-xs font-mono uppercase tracking-[0.25em] text-[#666666] mb-8 sm:mb-12">
-        <span className="font-bold text-[#222222] tracking-widest">[ 04 ] SIGNATURE ENGINEERING PROCESS</span>
+      <div className="w-full flex items-center justify-between text-[11px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-[0.25em] text-[#666666] mb-6 sm:mb-12">
+        <span className="font-bold text-[#222222] tracking-wider sm:tracking-widest">[ 04 ] SIGNATURE ENGINEERING PROCESS</span>
         <span className="text-[#C87A3E] font-bold">HYDERABAD, INDIA</span>
       </div>
 
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mb-16">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 sm:gap-6 mb-8 sm:mb-16">
         <div>
-          <h2 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-tight leading-none uppercase text-[#111111]">
+          <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-[0.05em] leading-none uppercase text-[#111111]">
             HOW I THINK &amp; <span className="text-[#C87A3E]">BUILD</span>
           </h2>
         </div>
 
         {/* Progress Tracker */}
-        <div className="flex items-center gap-4 text-xs font-mono text-[#555555] bg-white border border-black/10 px-5 py-2.5 rounded-full shadow-sm">
-          <span className="text-[#C87A3E] font-bold text-sm">0{activeIdx + 1}</span>
-          <div className="w-24 bg-black/10 h-2 rounded-full overflow-hidden">
+        <div className="flex items-center gap-3 sm:gap-4 text-xs font-mono text-[#555555] bg-white border border-black/10 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-sm">
+          <span className="text-[#C87A3E] font-bold text-xs sm:text-sm">0{activeIdx + 1}</span>
+          <div className="w-20 sm:w-24 bg-black/10 h-1.5 sm:h-2 rounded-full overflow-hidden">
             <div
               className="bg-[#C87A3E] h-full transition-all duration-300"
               style={{ width: `${((activeIdx + 1) / MIND_STAGES.length) * 100}%` }}
@@ -57,82 +57,82 @@ export const EngineeringMind: React.FC = () => {
       </div>
 
       {/* Main Stage Card */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div className="lg:col-span-8 bg-white border border-black/10 rounded-3xl p-8 sm:p-14 relative overflow-hidden shadow-sm min-h-[400px] flex flex-col justify-between">
-          <div className="space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+        <div className="lg:col-span-8 bg-white border border-black/10 rounded-3xl p-5 sm:p-10 md:p-14 relative overflow-hidden shadow-sm min-h-0 sm:min-h-[400px] flex flex-col justify-between">
+          <div className="space-y-4 sm:space-y-6">
             <div className="flex items-center justify-between">
-              <div className="p-4 bg-[#C87A3E]/10 rounded-2xl border border-[#C87A3E]/20 w-fit">
+              <div className="p-3 sm:p-4 bg-[#C87A3E]/10 rounded-2xl border border-[#C87A3E]/20 w-fit">
                 {getIcon(current.icon)}
               </div>
-              <span className="font-mono text-xs uppercase tracking-widest text-[#C87A3E] font-bold bg-[#ECEAE5] px-3 py-1 rounded-full">
+              <span className="font-mono text-[11px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-[#C87A3E] font-bold bg-[#ECEAE5] px-3 py-1 rounded-full">
                 STAGE 0{activeIdx + 1} / 0{MIND_STAGES.length}
               </span>
             </div>
 
             <div>
-              <h3 className="font-display font-black text-4xl sm:text-6xl text-[#111111] uppercase tracking-tight">
+              <h3 className="font-display font-black text-3xl sm:text-5xl md:text-6xl text-[#111111] uppercase tracking-[0.05em]">
                 {current.w}
               </h3>
-              <p className="text-sm font-mono text-[#888888] uppercase tracking-wider mt-1">
+              <p className="text-xs sm:text-sm font-mono text-[#888888] uppercase tracking-wider mt-1">
                 // {current.code}
               </p>
             </div>
 
-            <p className="text-base sm:text-lg text-[#333333] font-normal leading-relaxed">
+            <p className="text-sm sm:text-lg text-[#333333] font-normal leading-relaxed">
               {current.sub}
             </p>
 
-            <div className="p-4 rounded-xl bg-[#ECEAE5] border border-black/5 text-xs font-mono text-[#555555]">
+            <div className="p-3.5 sm:p-4 rounded-xl bg-[#ECEAE5] border border-black/5 text-[11px] sm:text-xs font-mono text-[#555555]">
               <strong className="text-[#111111] font-bold uppercase">Implementation Note:</strong> {current.details}
             </div>
           </div>
 
           {/* Nav Controls */}
-          <div className="flex items-center justify-between pt-8 mt-8 border-t border-black/10">
-            <div className="flex gap-3">
+          <div className="flex items-center justify-between pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-black/10">
+            <div className="flex gap-2 sm:gap-3">
               <button
                 onClick={prevStage}
-                className="p-3 rounded-xl bg-[#ECEAE5] hover:bg-[#C87A3E] hover:text-white transition-colors cursor-pointer text-[#111111]"
+                className="p-2.5 sm:p-3 rounded-xl bg-[#ECEAE5] hover:bg-[#C87A3E] hover:text-white transition-colors cursor-pointer text-[#111111]"
                 aria-label="Previous Stage"
               >
-                <ArrowLeft size={18} />
+                <ArrowLeft size={16} />
               </button>
               <button
                 onClick={nextStage}
-                className="p-3 rounded-xl bg-[#111111] text-white hover:bg-[#C87A3E] transition-colors cursor-pointer"
+                className="p-2.5 sm:p-3 rounded-xl bg-[#111111] text-white hover:bg-[#C87A3E] transition-colors cursor-pointer"
                 aria-label="Next Stage"
               >
-                <ArrowRight size={18} />
+                <ArrowRight size={16} />
               </button>
             </div>
 
-            <span className="text-xs font-mono text-[#888888]">
-              Press arrows to step through architecture
+            <span className="text-[10px] sm:text-xs font-mono text-[#888888] text-right">
+              Step through architecture
             </span>
           </div>
         </div>
 
         {/* Right Stage List */}
-        <div className="lg:col-span-4 space-y-2">
+        <div className="lg:col-span-4 space-y-1.5 sm:space-y-2">
           {MIND_STAGES.map((s, idx) => (
             <button
               key={s.w}
               onClick={() => setActiveIdx(idx)}
-              className={`w-full p-4 rounded-2xl text-left transition-all cursor-pointer flex items-center justify-between border ${
+              className={`w-full p-3 sm:p-4 rounded-xl sm:rounded-2xl text-left transition-all cursor-pointer flex items-center justify-between border ${
                 activeIdx === idx
                   ? 'bg-white border-[#C87A3E] shadow-sm text-[#111111]'
                   : 'bg-transparent border-transparent hover:bg-white/50 text-[#666666]'
               }`}
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2.5 sm:gap-3">
                 <span className={`text-xs font-mono font-bold ${activeIdx === idx ? 'text-[#C87A3E]' : 'text-[#999999]'}`}>
                   0{idx + 1}
                 </span>
-                <span className="font-display font-black text-xl uppercase tracking-tight">
+                <span className="font-display font-black text-lg sm:text-xl uppercase tracking-[0.05em]">
                   {s.w}
                 </span>
               </div>
-              <span className="text-[10px] font-mono text-[#999999] uppercase">
+              <span className="text-[9px] sm:text-[10px] font-mono text-[#999999] uppercase">
                 {activeIdx === idx ? 'Active' : 'Stage'}
               </span>
             </button>

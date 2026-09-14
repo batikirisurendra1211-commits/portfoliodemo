@@ -40,27 +40,27 @@ export const TechUniverse: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-24 sm:py-36 px-6 sm:px-14 max-w-7xl mx-auto border-t border-black/10">
+    <section id="skills" className="py-16 sm:py-36 px-4 sm:px-14 max-w-7xl mx-auto border-t border-black/10">
       {/* Top Chrome */}
-      <div className="w-full flex items-center justify-between text-xs font-mono uppercase tracking-[0.25em] text-[#666666] mb-8 sm:mb-12">
-        <span className="font-bold text-[#222222] tracking-widest">[ 05 ] TECHNOLOGY STACK &amp; TOOLS</span>
+      <div className="w-full flex items-center justify-between text-[11px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-[0.25em] text-[#666666] mb-6 sm:mb-12">
+        <span className="font-bold text-[#222222] tracking-wider sm:tracking-widest">[ 05 ] TECHNOLOGY STACK &amp; TOOLS</span>
         <span className="text-[#C87A3E] font-bold">HYDERABAD, INDIA</span>
       </div>
 
       {/* Section Header */}
-      <div className="mb-14">
-        <h2 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-tight leading-none uppercase text-[#111111]">
+      <div className="mb-8 sm:mb-14">
+        <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-[0.05em] leading-none uppercase text-[#111111]">
           TECHNICAL <span className="text-[#C87A3E]">UNIVERSE</span>
         </h2>
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex flex-wrap gap-2.5 mb-12">
+      <div className="flex flex-wrap gap-2 sm:gap-2.5 mb-8 sm:mb-12">
         {SKILL_CATEGORIES.map((cat) => (
           <button
             key={cat.id}
             onClick={() => setActiveCategory(cat.id)}
-            className={`px-4 py-2 rounded-full text-xs font-mono tracking-wider transition-all duration-200 cursor-pointer ${
+            className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-mono tracking-wider transition-all duration-200 cursor-pointer ${
               activeCategory === cat.id
                 ? 'bg-[#C87A3E] text-white font-bold shadow-sm'
                 : 'bg-white text-[#555555] border border-black/10 hover:border-[#C87A3E] hover:text-[#111111]'
@@ -76,7 +76,7 @@ export const TechUniverse: React.FC = () => {
         {filteredSkills.map((s) => (
           <div
             key={s.name}
-            className="p-5 rounded-2xl bg-white border border-black/10 hover:border-[#C87A3E] transition-all duration-300 shadow-sm flex flex-col justify-between group"
+            className="p-4 sm:p-5 rounded-2xl bg-white border border-black/10 hover:border-[#C87A3E] transition-all duration-300 shadow-sm flex flex-col justify-between group"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">

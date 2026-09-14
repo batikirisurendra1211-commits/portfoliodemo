@@ -6,10 +6,10 @@ export const EducationTimeline: React.FC = () => {
   const [showCertDetails, setShowCertDetails] = useState(false);
 
   return (
-    <section id="education" className="relative min-h-[100dvh] w-full bg-[#ECEAE5] text-[#222222] py-16 sm:py-24 px-6 sm:px-14 flex flex-col justify-between border-b border-black/10 select-none">
+    <section id="education" className="relative min-h-[100dvh] w-full bg-[#ECEAE5] text-[#222222] py-14 sm:py-24 px-4 sm:px-14 flex flex-col justify-between border-b border-black/10 select-none">
       {/* 1. Top Section Chrome */}
-      <div className="w-full flex items-center justify-between text-xs font-mono uppercase tracking-[0.25em] text-[#666666] mb-8 sm:mb-12">
-        <span className="font-bold text-[#222222] tracking-widest">[ 02 ] ACADEMIC JOURNEY &amp; CREDENTIALS</span>
+      <div className="w-full flex items-center justify-between text-[11px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-[0.25em] text-[#666666] mb-6 sm:mb-12">
+        <span className="font-bold text-[#222222] tracking-wider sm:tracking-widest">[ 02 ] ACADEMIC JOURNEY &amp; CREDENTIALS</span>
         <span className="text-[#C87A3E] font-bold">HYDERABAD, INDIA</span>
       </div>
 
@@ -17,7 +17,7 @@ export const EducationTimeline: React.FC = () => {
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center flex-1 my-auto py-4 sm:py-6">
         {/* Left Column: Solid Circular Graphic with Cutout Layered (Full Intact Shoulders) */}
         <div className="lg:col-span-5 flex items-center justify-center lg:justify-start order-2 lg:order-1 relative">
-          <div className="relative w-full max-w-[360px] sm:max-w-[400px] lg:max-w-[440px] flex items-end justify-center transition-transform duration-500 hover:scale-[1.02]">
+          <div className="relative w-full max-w-[260px] sm:max-w-[360px] lg:max-w-[440px] flex items-end justify-center transition-transform duration-500 hover:scale-[1.02]">
             <img
               src="/assets/surendra_education_circle.png?v=3"
               alt="Surendra Education"
@@ -27,23 +27,23 @@ export const EducationTimeline: React.FC = () => {
         </div>
 
         {/* Right Column: Single Line MY EDUCATION Typography + Structured Timeline */}
-        <div className="lg:col-span-7 space-y-6 text-left order-1 lg:order-2">
+        <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left order-1 lg:order-2">
           <div>
-            <h2 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-tight leading-none uppercase text-[#111111]">
+            <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-[0.05em] leading-none uppercase text-[#111111]">
               MY <span className="text-[#C87A3E]">EDUCATION</span>
             </h2>
           </div>
 
           {/* Clean Editorial Education Entries */}
-          <div className="space-y-5 max-w-xl">
+          <div className="space-y-4 sm:space-y-5 max-w-xl">
             {/* Entry 1: Pentagon Coaching Center (Oct 2025 - July 2026) */}
-            <div className="space-y-1.5 border-b border-black/10 pb-4">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="font-bold text-base sm:text-lg text-[#111111] font-sans flex items-center gap-2">
+            <div className="space-y-1.5 border-b border-black/10 pb-3 sm:pb-4">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-2">
+                <h3 className="font-bold text-sm sm:text-lg text-[#111111] font-sans flex items-center gap-1.5 sm:gap-2">
                   <span>Pentagon Coaching Center, Bangalore</span>
-                  <Award size={15} className="text-[#C87A3E]" />
+                  <Award size={14} className="text-[#C87A3E] shrink-0" />
                 </h3>
-                <span className="font-mono text-xs sm:text-sm text-[#C87A3E] font-bold">
+                <span className="font-mono text-[11px] sm:text-sm text-[#C87A3E] font-bold">
                   (Oct 2025 – July 2026)
                 </span>
               </div>
@@ -61,15 +61,15 @@ export const EducationTimeline: React.FC = () => {
                 </button>
 
                 {showCertDetails && (
-                  <div className="mt-3 p-4 rounded-xl bg-white border border-black/10 shadow-sm space-y-1.5 text-xs font-mono text-[#444444]">
+                  <div className="mt-3 p-3.5 sm:p-4 rounded-xl bg-white border border-black/10 shadow-sm space-y-1.5 text-xs font-mono text-[#444444]">
                     <p className="flex items-center gap-2">
-                      <CheckCircle size={13} className="text-[#C87A3E]" /> Core Java &amp; Object-Oriented System Architecture
+                      <CheckCircle size={13} className="text-[#C87A3E] shrink-0" /> Core Java &amp; Object-Oriented System Architecture
                     </p>
                     <p className="flex items-center gap-2">
-                      <CheckCircle size={13} className="text-[#C87A3E]" /> Relational Database Modeling (SQL, Joins, Triggers)
+                      <CheckCircle size={13} className="text-[#C87A3E] shrink-0" /> Relational Database Modeling (SQL, Joins, Triggers)
                     </p>
                     <p className="flex items-center gap-2">
-                      <CheckCircle size={13} className="text-[#C87A3E]" /> REST API Architecture &amp; Client-Server Protocols
+                      <CheckCircle size={13} className="text-[#C87A3E] shrink-0" /> REST API Architecture &amp; Client-Server Protocols
                     </p>
                   </div>
                 )}
@@ -77,12 +77,12 @@ export const EducationTimeline: React.FC = () => {
             </div>
 
             {/* Entry 2: B.Tech */}
-            <div className="space-y-1.5 border-b border-black/10 pb-4">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="font-bold text-base sm:text-lg text-[#111111] font-sans">
+            <div className="space-y-1.5 border-b border-black/10 pb-3 sm:pb-4">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-2">
+                <h3 className="font-bold text-sm sm:text-lg text-[#111111] font-sans">
                   Siddhartha Institute of Engineering &amp; Technology
                 </h3>
-                <span className="font-mono text-xs sm:text-sm text-[#C87A3E] font-bold">
+                <span className="font-mono text-[11px] sm:text-sm text-[#C87A3E] font-bold">
                   (2022 – 2025)
                 </span>
               </div>
@@ -92,12 +92,12 @@ export const EducationTimeline: React.FC = () => {
             </div>
 
             {/* Entry 3: Diploma */}
-            <div className="space-y-1.5 border-b border-black/10 pb-4">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="font-bold text-base sm:text-lg text-[#111111] font-sans">
+            <div className="space-y-1.5 border-b border-black/10 pb-3 sm:pb-4">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-2">
+                <h3 className="font-bold text-sm sm:text-lg text-[#111111] font-sans">
                   Government Polytechnic College, Vaddepally
                 </h3>
-                <span className="font-mono text-xs sm:text-sm text-[#C87A3E] font-bold">
+                <span className="font-mono text-[11px] sm:text-sm text-[#C87A3E] font-bold">
                   (2019 – 2022)
                 </span>
               </div>
@@ -108,11 +108,11 @@ export const EducationTimeline: React.FC = () => {
 
             {/* Entry 4: Schooling (SSC) */}
             <div className="space-y-1.5">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="font-bold text-base sm:text-lg text-[#111111] font-sans">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-2">
+                <h3 className="font-bold text-sm sm:text-lg text-[#111111] font-sans">
                   Zilla Parishad High School, Rajoli
                 </h3>
-                <span className="font-mono text-xs sm:text-sm text-[#C87A3E] font-bold">
+                <span className="font-mono text-[11px] sm:text-sm text-[#C87A3E] font-bold">
                   (2018 – 2019)
                 </span>
               </div>
@@ -125,15 +125,15 @@ export const EducationTimeline: React.FC = () => {
       </div>
 
       {/* 3. Bottom Meta Row */}
-      <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pt-6 border-t border-black/10 text-[#666666] text-xs font-mono mt-8">
-        <div className="flex flex-wrap items-center gap-6 sm:gap-10">
+      <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-3 pt-5 sm:pt-6 border-t border-black/10 text-[#666666] text-[11px] sm:text-xs font-mono mt-6 sm:mt-8">
+        <div className="flex flex-wrap items-center gap-4 sm:gap-10">
           <a href="https://sssilksarees.vercel.app" target="_blank" rel="noopener noreferrer" className="text-[#111111] font-bold hover:text-[#C87A3E] hover:underline">
             sssilksarees.vercel.app
           </a>
           <span>@batikirisurendra</span>
           <span className="hidden md:inline">Hyderabad, Telangana, India</span>
         </div>
-        <div className="text-[#888888] text-[11px]">
+        <div className="text-[#888888] text-[10px] sm:text-[11px]">
           <span>Academic Milestones &amp; Credentials</span>
         </div>
       </div>

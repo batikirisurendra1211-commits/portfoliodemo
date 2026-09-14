@@ -50,23 +50,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-36 px-6 sm:px-14 max-w-7xl mx-auto border-t border-black/10">
+    <section id="contact" className="py-16 sm:py-36 px-4 sm:px-14 max-w-7xl mx-auto border-t border-black/10">
       {/* Top Chrome */}
-      <div className="w-full flex items-center justify-between text-xs font-mono uppercase tracking-[0.25em] text-[#666666] mb-8 sm:mb-12">
-        <span className="font-bold text-[#222222] tracking-widest">[ 07 ] INITIATE COLLABORATION</span>
+      <div className="w-full flex items-center justify-between text-[11px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-[0.25em] text-[#666666] mb-6 sm:mb-12">
+        <span className="font-bold text-[#222222] tracking-wider sm:tracking-widest">[ 08 ] INITIATE COLLABORATION</span>
         <span className="text-[#C87A3E] font-bold">HYDERABAD, INDIA</span>
       </div>
 
-      <div className="mb-14">
-        <h2 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-tight leading-none uppercase text-[#111111]">
+      <div className="mb-8 sm:mb-14">
+        <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-[0.05em] leading-none uppercase text-[#111111]">
           LET'S BUILD <span className="text-[#C87A3E]">SOMETHING IMPACTFUL</span>
         </h2>
-        <p className="text-base text-[#555555] font-light mt-4 max-w-xl leading-relaxed font-mono">
+        <p className="text-xs sm:text-base text-[#555555] font-light mt-3 sm:mt-4 max-w-xl leading-relaxed font-mono">
           I'm actively open to opportunities in full-stack web engineering, backend development, and AI/ML systems.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         {/* Left: Contact Info */}
         <div className="lg:col-span-5 space-y-6">
           <div className="space-y-4">
@@ -75,12 +75,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
             </h3>
 
             {/* Email card */}
-            <div className="bg-white border border-black/10 rounded-2xl p-5 flex items-center justify-between shadow-sm hover:border-[#C87A3E] transition-all">
-              <div className="flex items-center gap-3 truncate">
-                <div className="p-3 bg-[#C87A3E]/10 rounded-xl text-[#C87A3E]">
+            <div className="bg-white border border-black/10 rounded-2xl p-4 sm:p-5 flex items-center justify-between gap-3 shadow-sm hover:border-[#C87A3E] transition-all">
+              <div className="flex items-center gap-3 min-w-0 flex-1">
+                <div className="p-3 bg-[#C87A3E]/10 rounded-xl text-[#C87A3E] shrink-0">
                   <Mail size={18} />
                 </div>
-                <div className="truncate">
+                <div className="min-w-0 flex-1">
                   <p className="text-[10px] font-mono text-[#888888]">EMAIL ADDRESS</p>
                   <a href={`mailto:${PERSONAL_INFO.email}`} className="text-xs sm:text-sm font-semibold text-[#111111] hover:text-[#C87A3E] truncate block">
                     {PERSONAL_INFO.email}
@@ -89,7 +89,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
               </div>
               <button
                 onClick={handleCopyEmail}
-                className="p-2.5 rounded-xl bg-[#ECEAE5] text-[#333333] hover:bg-[#C87A3E] hover:text-white transition-colors cursor-pointer"
+                className="p-2.5 rounded-xl bg-[#ECEAE5] text-[#333333] hover:bg-[#C87A3E] hover:text-white transition-colors cursor-pointer shrink-0"
                 title="Copy Email"
               >
                 {copiedEmail ? <Check size={16} /> : <Copy size={16} />}
@@ -97,21 +97,21 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
             </div>
 
             {/* Phone card */}
-            <div className="bg-white border border-black/10 rounded-2xl p-5 flex items-center gap-3 shadow-sm hover:border-[#C87A3E] transition-all">
-              <div className="p-3 bg-[#C87A3E]/10 rounded-xl text-[#C87A3E]">
+            <div className="bg-white border border-black/10 rounded-2xl p-4 sm:p-5 flex items-center gap-3 shadow-sm hover:border-[#C87A3E] transition-all">
+              <div className="p-3 bg-[#C87A3E]/10 rounded-xl text-[#C87A3E] shrink-0">
                 <Phone size={18} />
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <p className="text-[10px] font-mono text-[#888888]">PHONE / WHATSAPP</p>
-                <a href={`tel:${PERSONAL_INFO.phone}`} className="text-xs sm:text-sm font-semibold text-[#111111] hover:text-[#C87A3E]">
+                <a href={`tel:${PERSONAL_INFO.phone}`} className="text-xs sm:text-sm font-semibold text-[#111111] hover:text-[#C87A3E] block truncate">
                   {PERSONAL_INFO.phone}
                 </a>
               </div>
             </div>
 
             {/* Location card */}
-            <div className="bg-white border border-black/10 rounded-2xl p-5 flex items-center gap-3 shadow-sm hover:border-[#C87A3E] transition-all">
-              <div className="p-3 bg-[#C87A3E]/10 rounded-xl text-[#C87A3E]">
+            <div className="bg-white border border-black/10 rounded-2xl p-4 sm:p-5 flex items-center gap-3 shadow-sm hover:border-[#C87A3E] transition-all">
+              <div className="p-3 bg-[#C87A3E]/10 rounded-xl text-[#C87A3E] shrink-0">
                 <MapPin size={18} />
               </div>
               <div>
@@ -123,10 +123,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
             </div>
           </div>
 
-          <div className="pt-2 flex flex-wrap gap-3">
+          <div className="pt-2 flex flex-col sm:flex-row flex-wrap gap-3">
             <button
               onClick={onOpenResume}
-              className="px-7 py-3.5 rounded-full bg-[#111111] text-white font-mono font-bold text-xs uppercase tracking-widest hover:bg-[#C87A3E] transition-colors shadow-sm cursor-pointer"
+              className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#111111] text-white font-mono font-bold text-xs uppercase tracking-widest hover:bg-[#C87A3E] transition-colors shadow-sm cursor-pointer flex items-center justify-center"
             >
               Inspect Resume OS
             </button>
@@ -134,7 +134,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
               href="https://sssilksarees.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-7 py-3.5 rounded-full border border-black/20 text-[#111111] font-mono font-bold text-xs uppercase tracking-widest hover:border-[#C87A3E] hover:text-[#C87A3E] transition-colors flex items-center gap-1.5 cursor-pointer"
+              className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-full border border-black/20 text-[#111111] font-mono font-bold text-xs uppercase tracking-widest hover:border-[#C87A3E] hover:text-[#C87A3E] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
             >
               Live Project ↗
             </a>
@@ -145,11 +145,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
         <div className="lg:col-span-7">
           <form
             onSubmit={handleSubmit}
-            className="bg-white border border-black/10 rounded-3xl p-8 sm:p-10 space-y-6 shadow-sm"
+            className="bg-white border border-black/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 space-y-5 sm:space-y-6 shadow-sm"
           >
             <div className="flex items-center justify-between pb-4 border-b border-black/10">
-              <h3 className="font-sans font-bold text-2xl text-[#111111]">Send a Direct Message</h3>
-              <span className="px-3 py-1 rounded-full bg-[#ECEAE5] text-[#333333] border border-black/10 text-xs font-mono font-semibold flex items-center gap-2">
+              <h3 className="font-sans font-bold text-xl sm:text-2xl text-[#111111]">Send a Direct Message</h3>
+              <span className="px-2.5 sm:px-3 py-1 rounded-full bg-[#ECEAE5] text-[#333333] border border-black/10 text-[11px] sm:text-xs font-mono font-semibold flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#C87A3E] inline-block animate-ping" />
                 API LIVE
               </span>
@@ -221,7 +221,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="px-9 py-3.5 rounded-full bg-[#C87A3E] text-white font-mono font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-[#B46A32] shadow-sm transition-colors cursor-pointer disabled:opacity-50"
+              className="w-full sm:w-auto px-9 py-3.5 rounded-full bg-[#C87A3E] text-white font-mono font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-[#B46A32] shadow-sm transition-colors cursor-pointer disabled:opacity-50"
             >
               {status === 'submitting' ? 'Dispatching...' : 'Send Message'} <Send size={14} />
             </button>

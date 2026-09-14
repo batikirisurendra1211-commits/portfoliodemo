@@ -52,7 +52,7 @@ export const PortfolioAssistant: React.FC = () => {
       {/* Floating Toggle Button - Elevated so it never overlaps the bottom-right hero accents */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-24 right-6 z-40 p-2.5 sm:p-3 rounded-full bg-[#111111] text-white shadow-2xl hover:scale-110 transition-all duration-300 flex items-center gap-2 border border-white/20 cursor-pointer"
+        className="fixed bottom-28 sm:bottom-24 right-4 sm:right-6 z-40 p-2.5 sm:p-3 rounded-full bg-[#111111] text-white shadow-2xl hover:scale-110 transition-all duration-300 flex items-center gap-2 border border-white/20 cursor-pointer"
         aria-label="Open portfolio AI assistant"
       >
         <Bot size={18} className="text-[#C87A3E]" />
@@ -61,7 +61,7 @@ export const PortfolioAssistant: React.FC = () => {
 
       {/* Assistant Modal Window */}
       {isOpen && (
-        <div className="fixed bottom-20 right-6 z-50 w-[90vw] max-w-sm bg-white border border-black/15 rounded-3xl shadow-2xl overflow-hidden flex flex-col h-[480px]">
+        <div className="fixed bottom-28 right-4 left-4 sm:left-auto sm:right-6 z-50 max-w-sm sm:w-96 bg-white border border-black/15 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col h-[460px] sm:h-[480px] max-h-[80vh]">
           {/* Header */}
           <div className="bg-[#ECEAE5] px-4 py-3 border-b border-black/10 flex items-center justify-between">
             <div className="flex items-center gap-2">

@@ -146,42 +146,43 @@ export const AdminPortalModal: React.FC<AdminPortalModalProps> = ({ isOpen, onCl
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-2 sm:p-6 overflow-y-auto"
       onClick={onClose}
     >
       <div
-        className="bg-[#ECEAE5] border border-black/20 rounded-3xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden my-4 text-[#222222]"
+        className="bg-[#ECEAE5] border border-black/20 rounded-2xl sm:rounded-3xl max-w-4xl w-full max-h-[94vh] sm:max-h-[90vh] flex flex-col shadow-2xl overflow-hidden my-2 sm:my-4 text-[#222222]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-[#DFDCD5] px-6 py-4 border-b border-black/10 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="p-1.5 bg-[#C87A3E] text-white rounded-lg shadow-sm">
+        <div className="bg-[#DFDCD5] px-3.5 sm:px-6 py-2.5 sm:py-4 border-b border-black/10 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="p-1.5 bg-[#C87A3E] text-white rounded-lg shadow-sm shrink-0">
               <ShieldCheck size={16} />
             </span>
-            <span className="text-xs font-mono font-bold text-[#111111]">
-              ADMIN CONTROL PORTAL · SURENDRA.DEV
+            <span className="text-[11px] sm:text-xs font-mono font-bold text-[#111111] truncate">
+              ADMIN CONTROL PORTAL<span className="hidden sm:inline"> · SURENDRA.DEV</span>
             </span>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg bg-white hover:bg-[#C87A3E] hover:text-white text-[#111111] transition-colors border border-black/10 shadow-sm cursor-pointer"
+            className="p-1.5 rounded-lg bg-white hover:bg-[#C87A3E] hover:text-white text-[#111111] transition-colors border border-black/10 shadow-sm cursor-pointer shrink-0"
+            aria-label="Close portal"
           >
             <X size={16} />
           </button>
         </div>
 
         {/* Content */}
-        <div className="p-6 sm:p-8 overflow-y-auto flex-1 text-[#333333] text-xs font-mono space-y-8 bg-[#ECEAE5]">
+        <div className="p-4 sm:p-6 md:p-8 overflow-y-auto flex-1 text-[#333333] text-xs font-mono space-y-6 sm:space-y-8 bg-[#ECEAE5]">
           {!token ? (
             /* Login Screen */
-            <div className="max-w-md mx-auto py-8 space-y-6">
+            <div className="max-w-md mx-auto py-4 sm:py-8 space-y-5 sm:space-y-6">
               <div className="text-center space-y-2">
-                <div className="w-12 h-12 rounded-full bg-[#C87A3E]/10 border border-[#C87A3E]/30 flex items-center justify-center mx-auto text-[#C87A3E] shadow-sm">
-                  <Lock size={20} />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#C87A3E]/10 border border-[#C87A3E]/30 flex items-center justify-center mx-auto text-[#C87A3E] shadow-sm">
+                  <Lock size={18} />
                 </div>
-                <h3 className="font-display font-black text-3xl uppercase tracking-tight text-[#111111]">Admin Authentication</h3>
-                <p className="text-xs text-[#666666]">
+                <h3 className="font-display font-black text-2xl sm:text-3xl uppercase tracking-[0.05em] text-[#111111]">Admin Authentication</h3>
+                <p className="text-[11px] sm:text-xs text-[#666666]">
                   Enter authorized credentials to view live telemetry and manage incoming inquiries.
                 </p>
               </div>
@@ -192,7 +193,7 @@ export const AdminPortalModal: React.FC<AdminPortalModalProps> = ({ isOpen, onCl
                 </div>
               )}
 
-              <form onSubmit={handleLogin} className="space-y-4">
+              <form onSubmit={handleLogin} className="space-y-3.5 sm:space-y-4">
                 <div>
                   <label className="block text-[#666666] uppercase text-[10px] mb-1 font-bold">
                     Admin Email
@@ -219,7 +220,7 @@ export const AdminPortalModal: React.FC<AdminPortalModalProps> = ({ isOpen, onCl
                   />
                 </div>
 
-                <div className="p-3 bg-white border border-black/10 rounded-xl text-[11px] text-[#555555] shadow-sm">
+                <div className="p-3 bg-white border border-black/10 rounded-xl text-[10px] sm:text-[11px] text-[#555555] shadow-sm">
                   <p className="font-bold text-[#C87A3E] mb-1">Pre-Seeded Master Credentials:</p>
                   <p>Email: <span className="text-[#111111] font-bold">admin@surendra.dev</span></p>
                   <p>Password: <span className="text-[#111111] font-bold">Admin@12345</span></p>
@@ -236,51 +237,51 @@ export const AdminPortalModal: React.FC<AdminPortalModalProps> = ({ isOpen, onCl
             </div>
           ) : (
             /* Authenticated Admin Dashboard */
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {/* Top Stats Cards */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div className="p-4 bg-white rounded-2xl border border-black/10 space-y-1 shadow-sm">
-                  <div className="flex items-center justify-between text-[#888888] text-[10px]">
-                    <span>TOTAL PAGE VIEWS</span>
-                    <Eye size={12} className="text-[#C87A3E]" />
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
+                <div className="p-3 sm:p-4 bg-white rounded-xl sm:rounded-2xl border border-black/10 space-y-1 shadow-sm">
+                  <div className="flex items-center justify-between text-[#888888] text-[9px] sm:text-[10px]">
+                    <span className="truncate">TOTAL VIEWS</span>
+                    <Eye size={12} className="text-[#C87A3E] shrink-0" />
                   </div>
-                  <p className="text-2xl font-bold font-sans text-[#111111]">
+                  <p className="text-xl sm:text-2xl font-bold font-sans text-[#111111]">
                     {analytics?.total_views || 198}
                   </p>
-                  <p className="text-[10px] text-[#C87A3E] font-bold">+14% this week</p>
+                  <p className="text-[9px] sm:text-[10px] text-[#C87A3E] font-bold">+14% this week</p>
                 </div>
 
-                <div className="p-4 bg-white rounded-2xl border border-black/10 space-y-1 shadow-sm">
-                  <div className="flex items-center justify-between text-[#888888] text-[10px]">
-                    <span>UNIQUE SESSIONS</span>
-                    <Users size={12} className="text-[#C87A3E]" />
+                <div className="p-3 sm:p-4 bg-white rounded-xl sm:rounded-2xl border border-black/10 space-y-1 shadow-sm">
+                  <div className="flex items-center justify-between text-[#888888] text-[9px] sm:text-[10px]">
+                    <span className="truncate">SESSIONS</span>
+                    <Users size={12} className="text-[#C87A3E] shrink-0" />
                   </div>
-                  <p className="text-2xl font-bold font-sans text-[#111111]">
+                  <p className="text-xl sm:text-2xl font-bold font-sans text-[#111111]">
                     {analytics?.unique_sessions || 74}
                   </p>
-                  <p className="text-[10px] text-[#666666]">Organic Traffic</p>
+                  <p className="text-[9px] sm:text-[10px] text-[#666666]">Organic Traffic</p>
                 </div>
 
-                <div className="p-4 bg-white rounded-2xl border border-black/10 space-y-1 shadow-sm">
-                  <div className="flex items-center justify-between text-[#888888] text-[10px]">
-                    <span>LIVE CONNECTED</span>
-                    <Activity size={12} className="text-[#C87A3E] animate-pulse" />
+                <div className="p-3 sm:p-4 bg-white rounded-xl sm:rounded-2xl border border-black/10 space-y-1 shadow-sm">
+                  <div className="flex items-center justify-between text-[#888888] text-[9px] sm:text-[10px]">
+                    <span className="truncate">LIVE</span>
+                    <Activity size={12} className="text-[#C87A3E] animate-pulse shrink-0" />
                   </div>
-                  <p className="text-2xl font-bold font-sans text-[#C87A3E]">
+                  <p className="text-xl sm:text-2xl font-bold font-sans text-[#C87A3E]">
                     {analytics?.connected_live || 4}
                   </p>
-                  <p className="text-[10px] text-[#C87A3E]">WebSockets Live</p>
+                  <p className="text-[9px] sm:text-[10px] text-[#C87A3E]">Sockets Live</p>
                 </div>
 
-                <div className="p-4 bg-white rounded-2xl border border-black/10 space-y-1 shadow-sm">
-                  <div className="flex items-center justify-between text-[#888888] text-[10px]">
-                    <span>TOTAL INQUIRIES</span>
-                    <Mail size={12} className="text-[#C87A3E]" />
+                <div className="p-3 sm:p-4 bg-white rounded-xl sm:rounded-2xl border border-black/10 space-y-1 shadow-sm">
+                  <div className="flex items-center justify-between text-[#888888] text-[9px] sm:text-[10px]">
+                    <span className="truncate">INQUIRIES</span>
+                    <Mail size={12} className="text-[#C87A3E] shrink-0" />
                   </div>
-                  <p className="text-2xl font-bold font-sans text-[#111111]">
+                  <p className="text-xl sm:text-2xl font-bold font-sans text-[#111111]">
                     {messages.length}
                   </p>
-                  <p className="text-[10px] text-[#C87A3E] font-bold">{messages.filter(m => !m.is_read).length} unread</p>
+                  <p className="text-[9px] sm:text-[10px] text-[#C87A3E] font-bold">{messages.filter(m => !m.is_read).length} unread</p>
                 </div>
               </div>
 

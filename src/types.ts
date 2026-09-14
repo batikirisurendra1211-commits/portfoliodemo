@@ -6,7 +6,7 @@ export interface Project {
   short: string;
   tech: string[];
   live?: string;
-  viz: 'browser' | 'pipeline' | 'emotion';
+  viz: 'browser' | 'pipeline' | 'emotion' | 'portfolio';
   metrics?: Record<string, string>;
   study: {
     overview: string;

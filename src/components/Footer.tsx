@@ -13,12 +13,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenAdmin }) => 
   };
 
   return (
-    <footer className="border-t border-black/10 bg-[#ECEAE5] text-[#222222] py-16 px-6 sm:px-14">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <footer className="border-t border-black/10 bg-[#ECEAE5] text-[#222222] py-12 sm:py-16 px-4 sm:px-14">
+      <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Brand Col */}
           <div className="md:col-span-6 space-y-3">
-            <h3 className="font-display font-black text-3xl sm:text-4xl tracking-tight text-[#111111] uppercase">
+            <h3 className="font-display font-black text-2xl sm:text-4xl tracking-[0.05em] text-[#111111] uppercase">
               SURENDRA BATIKIRI<span className="text-[#C87A3E]">.</span>
             </h3>
             <p className="text-xs font-mono text-[#666666] leading-relaxed max-w-sm">
@@ -47,7 +47,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenAdmin }) => 
             <p><a href="#mind" className="text-[#555555] hover:text-[#111111] transition-colors">04. Engineering Mind</a></p>
             <p><a href="#skills" className="text-[#555555] hover:text-[#111111] transition-colors">05. Tech Universe</a></p>
             <p><a href="#terminal" className="text-[#555555] hover:text-[#111111] transition-colors">06. Developer Terminal</a></p>
-            <p><a href="#contact" className="text-[#555555] hover:text-[#111111] transition-colors">07. Contact</a></p>
+            <p><a href="#achievements" className="text-[#555555] hover:text-[#111111] transition-colors">07. Achievements</a></p>
+            <p><a href="#contact" className="text-[#555555] hover:text-[#111111] transition-colors">08. Contact</a></p>
           </div>
 
           {/* Direct Connect */}
@@ -81,7 +82,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume, onOpenAdmin }) => 
         </div>
 
         {/* Bottom copyright */}
-        <div className="pt-8 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#666666]">
+        <div className="pt-6 sm:pt-8 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-[11px] sm:text-xs font-mono text-[#666666] text-center sm:text-left">
           <p>© 2025 Surendra Batikiri. Built with React, TypeScript &amp; FastAPI.</p>
           <button
             onClick={scrollToTop}

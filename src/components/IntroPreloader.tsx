@@ -28,6 +28,7 @@ export const IntroPreloader: React.FC<IntroPreloaderProps> = ({ onComplete }) =>
   }, [onComplete]);
 
   const handleSkip = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     setIsExiting(true);
     setTimeout(onComplete, 200);
   };
@@ -41,19 +42,19 @@ export const IntroPreloader: React.FC<IntroPreloaderProps> = ({ onComplete }) =>
       <div className="max-w-lg w-full text-center space-y-6">
         {/* Editorial Init Header */}
         <div className="space-y-2">
-          <p className="text-[11px] font-mono uppercase tracking-[0.4em] text-[#C87A3E] font-bold">
+          <p className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.4em] text-[#C87A3E] font-bold">
             PORTFOLIO 2026
           </p>
-          <h1 className="font-display font-black text-5xl sm:text-7xl tracking-tight leading-[0.9] text-[#111111] uppercase">
+          <h1 className="font-display font-black text-4xl sm:text-7xl tracking-[0.04em] sm:tracking-[0.05em] leading-[0.9] text-[#111111] uppercase">
             SURENDRA BATIKIRI
           </h1>
-          <p className="text-xs sm:text-sm font-mono text-[#666666] tracking-widest uppercase">
+          <p className="text-[10px] sm:text-sm font-mono text-[#666666] tracking-wider sm:tracking-widest uppercase">
             FULL STACK DEVELOPER · BACKEND &amp; AI/ML
           </p>
         </div>
 
         {/* Minimal Terracotta Accent Line */}
-        <div className="w-48 sm:w-64 mx-auto bg-black/10 h-1 rounded-full overflow-hidden">
+        <div className="w-40 sm:w-64 mx-auto bg-black/10 h-1 rounded-full overflow-hidden">
           <div
             className="bg-[#C87A3E] h-full transition-all duration-75 ease-out shadow-[0_0_12px_rgba(200,122,62,0.4)]"
             style={{ width: `${progress}%` }}
